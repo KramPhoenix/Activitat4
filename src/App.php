@@ -4,7 +4,8 @@
 namespace Rentit;
 
 
-class App {
+class App
+{
 
     //public $routes=[];
 
@@ -16,27 +17,23 @@ class App {
         //Debe ser un método que recoja la ruta y devuelva un array con todas las rutas disponibles (las que están
         //en la carpeta "Controllers"
         $routes = self::getRoutes();
-        var_dump($routes);
-        die;
 
         $request = new Request();
-        $controller=$request->getController();
-        $action=$request->getAction();
-        var_dump($controller, $action);
-        die;
+        $controller = $request->getController();
+        $action = $request->getAction();
+
         //-------------------------------------------------------------------------------------------------------
 
         try {
             if (in_array($controller, $routes)) {
-                $nameController = '\\Rentit\Controllers\\' . ucfirst($controller). 'Controller';
-                $objCont = new $nameController;
+                $nameController = '\\Rentit\Controllers\\' . ucfirst($controller) . 'Controller';
+                $objCont = new $nameController($request);
                 if (is_callable([$objCont, $action])) {
                     call_user_func([$objCont, $action]);
                 } else {
                     call_user_func([$objCont, 'error']);
                 }
-            }
-            else {
+            } else {
                 throw new \Exception("[ERROR]: Ruta no definida");
             }
         } catch (\Exception $e) {
@@ -46,7 +43,9 @@ class App {
 
     }
 
-    static function getRoutes():Array{
+
+    static function getRoutes():Array
+    {
         $dir=__DIR__.'/Controllers';
         $handle=opendir($dir);
         while (false!=($entry=readdir($handle))){
@@ -60,7 +59,7 @@ class App {
      *  EXTRACTS controller && method
      *  @return array
      */
-    private function getArrayController() {
+    /*private function getArrayController() {
         $requestString = htmlentities($_SERVER['REQUEST_URI']);
         $requestArray = explode('/', $requestString);
         array_shift($requestArray);
@@ -74,5 +73,5 @@ class App {
             $method = $requestArray[1];
         }
         return [$controller, $method];
-    }
+    }*/
 }
