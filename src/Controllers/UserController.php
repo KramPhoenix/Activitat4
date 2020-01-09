@@ -11,21 +11,33 @@ class UserController extends Controller
     public function __construct($request)
     {
         parent::__construct($request);
-        var_dump($this->request->getParams());
-        die;
-        echo __CLASS__;
     }
     public function  index(){
 
-        $template=$this->request->getParams();
-        $data=$this->request->getParams();
-        $this->render([]);
+        $data=[
+            'title' => 'User',
+            'results' => $this->getResults()
+        ];
+
+        $this->render($data);
 
     }
 
-    public function render($dataview=null)
+    public function getSingleResult()
     {
-        var_dump($dataview);
+        // TODO: Implement getSingleResult() method.
+    }
 
+    public function getResults()
+    {
+        $db = $this->getDB();
+        $stmt = $this->query($db, "SELECT * from inmueble_venta", null);
+        $results = $this->row_extract($stmt);
+        return $results;
+    }
+    
+    public function json(array $dataview)
+    {
+        // TODO: Implement json() method.
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+namespace Rentit;
+
 class DB extends \PDO{
     static $instance;
     protected $config;

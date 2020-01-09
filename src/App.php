@@ -17,7 +17,6 @@ class App
         //Debe ser un método que recoja la ruta y devuelva un array con todas las rutas disponibles (las que están
         //en la carpeta "Controllers"
         $routes = self::getRoutes();
-
         $request = new Request();
         $controller = $request->getController();
         $action = $request->getAction();
@@ -50,7 +49,7 @@ class App
         $handle=opendir($dir);
         while (false!=($entry=readdir($handle))){
             if($entry!="." && $entry!=".."){
-                $routes[]=strtolower(substr($entry, 0, -4));
+                $routes[]=strtolower(substr($entry, 0, -14));
             }
         }
         return $routes;

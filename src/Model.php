@@ -1,5 +1,7 @@
 <?php
 
+namespace Rentit;
+
 interface Model
 {
     // function to access DB

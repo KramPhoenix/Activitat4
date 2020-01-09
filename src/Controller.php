@@ -24,8 +24,32 @@ abstract class Controller implements View,Model
             }
         }
     }
+
     function getDB(){
         $db=DB::singleton();
         return $db;
     }
+
+    protected function query ($db,$sql,$params=null){
+        try{
+            $stmt =$db->prepare($sql);
+            if($params){
+                $res= $stmt->execute($params);
+
+            }else{
+                $res=$stmt->execute();
+
+            }
+            return $stmt;
+        }catch(\PDOException $e){
+            echo $e->getMessage();
+        }
+
+    }
+
+    protected function row_extract($stmt){
+        $rows=$stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return $rows;
+    }
+
 }
