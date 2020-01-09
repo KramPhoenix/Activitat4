@@ -52,4 +52,10 @@ abstract class Controller implements View,Model
         return $rows;
     }
 
+    protected function row_extract_first($stmt){
+        $rows=$stmt->fetch(\PDO::FETCH_ASSOC);
+        return $rows;
+    }
+
+
 }

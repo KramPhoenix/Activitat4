@@ -7,10 +7,10 @@
     <header>
         <h1>Welcome</h1>
         <ul>
-            <a href=""><li>Home</li></a>
-            <a href=""><li>Comprar</li></a>
-            <a href=""><li>Vender</li></a>
-            <a href=""><li>Contacto</li></a>
+            <a href="/"><li>Home</li></a>
+            <a href="user"><li>Comprar</li></a>
+            <a href="contacto"><li>Contacto</li></a>
+            <a href="login"><li>Login</li></a>
         </ul>
     </header>
     <div class="container-main">
