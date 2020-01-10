@@ -22,8 +22,6 @@ class LoginController extends Controller
 
   public function login(){
       if(isset($_POST)){
-          $params=[':usuario'=>$_POST['usuari'],null
-              ':password'=>$_POST['contrasenya']];
           $sql='SELECT * FROM usuarios WHERE usuario="'.$_POST['usuari'].'" AND contrasenya="'.$_POST['contrasenya'].'"' ;
           $db=$this->getDB();
           $result = $this->query($db , $sql);
