@@ -59,3 +59,19 @@ input{
 #check{
     width: 50px;
 }
+
+.contact{
+    display: flex;
+    flex-direction: column;
+}
+
+#send{
+    width: 100px;
+    align-self: flex-end;
+}
+label{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+

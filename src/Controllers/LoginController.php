@@ -7,7 +7,7 @@ namespace Rentit\Controllers;
 use Rentit\Controller;
 
 
-final class LoginController extends Controller
+class LoginController extends Controller
 {
     public function __construct($request)
     {

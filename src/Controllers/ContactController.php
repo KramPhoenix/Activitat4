@@ -6,21 +6,18 @@ namespace Rentit\Controllers;
 
 use Rentit\Controller;
 
-class UserController extends Controller
+
+class ContactController extends Controller
 {
     public function __construct($request)
     {
         parent::__construct($request);
+
+
     }
-    public function  index(){
-
-        $data=[
-            'title' => 'User',
-            'results' => $this->getResults()
-        ];
-
+    public function index(){
+        $data=['title'=>'CONTACTO'];
         $this->render($data);
-
     }
 
     public function getSingleResult()
@@ -30,12 +27,9 @@ class UserController extends Controller
 
     public function getResults()
     {
-        $db = $this->getDB();
-        $stmt = $this->query($db, "SELECT * from inmueble_venta", null);
-        $results = $this->row_extract($stmt);
-        return $results;
+        // TODO: Implement getResults() method.
     }
-    
+
     public function json(array $dataview)
     {
         // TODO: Implement json() method.

@@ -18,7 +18,7 @@ final class DefaultController extends Controller
     public function index(){
         /* $template=['template'=>'opcion'];
          $this->render($template);*/
-        $data=['title'=>'GUAY'];
+        $data=['title'=>'HOME'];
         $this->render($data);
     }
 

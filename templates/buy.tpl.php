@@ -9,7 +9,7 @@
         <ul>
             <a href="/"><li>Home</li></a>
             <a href="user"><li>Comprar</li></a>
-            <a href="contacto"><li>Contacto</li></a>
+            <a href="contact"><li>Contacto</li></a>
             <a href="login"><li>Login</li></a>
         </ul>
     </header>
