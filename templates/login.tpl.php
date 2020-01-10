@@ -5,7 +5,7 @@
 </head>
 <body>
 <header>
-    <h1>Welcome</h1>
+    <h1>RENTIT</h1>
     <ul>
         <a href="/"><li>Home</li></a>
         <a href="buy"><li>Comprar</li></a>
@@ -24,7 +24,7 @@
                 <span>RECORDAR-ME?</span>
             </div>
         </form>
-
+        <a href="register">No tienes cuenta? Registrate AQUÍ</a>
 </div>
 </body>
 </html>

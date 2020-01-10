@@ -5,7 +5,7 @@
 </head>
 <body>
 <header>
-    <h1>Welcome</h1>
+    <h1>RENTIT</h1>
     <ul>
         <a href="/"><li>Home</li></a>
         <a href="buy"><li>Comprar</li></a>

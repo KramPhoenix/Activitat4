@@ -24,16 +24,19 @@ class LoginController extends Controller
       if(isset($_POST)){
           $params=[':usuario'=>$_POST['usuari'],
               ':password'=>$_POST['contrasenya']];
-          $sql='SELECT * FROM "usuarios" WHERE usuario=:usuario AND contrasenya=:password ;';
-          $result=$this->getSingleResult($sql,$params);
-          if(is_array($result)){
+          $sql='SELECT * FROM usuarios WHERE usuario="'.$_POST['usuari'].'" AND contrasenya="'.$_POST['contrasenya'].'"' ;
+          $db=$this->getDB();
+          $result = $this->query($db , $sql);
+          $resultado=$this->row_extract($result);
+
+          if(!empty($resultado)){
               session_start();
               $_SESSION['sesiones']=$_POST['usuario'];
 
-              header('location:/user');
+              header('location:/buy');
           }
           else{
-              header('location:/home');
+              header('location:/login');
           }
       }
   }

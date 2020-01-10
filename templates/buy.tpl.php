@@ -5,10 +5,10 @@
 </head>
 <body>
     <header>
-        <h1>Welcome</h1>
+        <h1>RENTIT</h1>
         <ul>
             <a href="/"><li>Home</li></a>
-            <a href="user"><li>Comprar</li></a>
+            <a href="buy"><li>Comprar</li></a>
             <a href="contact"><li>Contacto</li></a>
             <a href="login"><li>Login</li></a>
         </ul>
