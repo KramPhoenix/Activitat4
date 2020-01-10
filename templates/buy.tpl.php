@@ -13,6 +13,7 @@
             <a href="login"><li>Login</li></a>
         </ul>
     </header>
+    <a href="create"><button style="width: 250px; height: 50px">PUBLICAR</button></a><br><br>
     <div class="container-main">
             <?php foreach ($results as $result)
             {?>
